@@ -149,6 +149,7 @@
             // 
             comboBox1.BackColor = SystemColors.GradientInactiveCaption;
             comboBox1.FormattingEnabled = true;
+            comboBox1.Items.AddRange(new object[] { "Solteiro", "Casado", "Separado", "Divorciado", "Viúvo" });
             comboBox1.Location = new Point(335, 79);
             comboBox1.Name = "comboBox1";
             comboBox1.Size = new Size(121, 21);
@@ -180,6 +181,7 @@
             // comboBox3
             // 
             comboBox3.FormattingEnabled = true;
+            comboBox3.Items.AddRange(new object[] { "A+", "A-", "B+", "B-", "AB+", "AB-", "O+", "O-" });
             comboBox3.Location = new Point(857, 79);
             comboBox3.Name = "comboBox3";
             comboBox3.Size = new Size(120, 21);
@@ -217,6 +219,7 @@
             // 
             comboBox2.BackColor = SystemColors.GradientInactiveCaption;
             comboBox2.FormattingEnabled = true;
+            comboBox2.Items.AddRange(new object[] { "Feminino", "Masculino" });
             comboBox2.Location = new Point(857, 37);
             comboBox2.Name = "comboBox2";
             comboBox2.Size = new Size(121, 21);
@@ -479,6 +482,7 @@
             // comboBox7
             // 
             comboBox7.FormattingEnabled = true;
+            comboBox7.Items.AddRange(new object[] { "RO", "AC", "AM", "RR", "PA", "AP", "TO", "MA", "PI", "CE", "RN", "PB", "PE", "AL", "SE", "BA", "MG", "ES", "RJ", "SP", "PR", "SC", "RS", "MS", "MT", "GO", "DF" });
             comboBox7.Location = new Point(462, 62);
             comboBox7.Name = "comboBox7";
             comboBox7.Size = new Size(70, 21);

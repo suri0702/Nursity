@@ -40,8 +40,6 @@
             textBox14 = new TextBox();
             textBox13 = new TextBox();
             label25 = new Label();
-            label13 = new Label();
-            textBox12 = new TextBox();
             label23 = new Label();
             textBox11 = new TextBox();
             label24 = new Label();
@@ -126,8 +124,6 @@
             groupBox2.Controls.Add(textBox14);
             groupBox2.Controls.Add(textBox13);
             groupBox2.Controls.Add(label25);
-            groupBox2.Controls.Add(label13);
-            groupBox2.Controls.Add(textBox12);
             groupBox2.Controls.Add(label23);
             groupBox2.Controls.Add(textBox11);
             groupBox2.Controls.Add(label24);
@@ -245,22 +241,6 @@
             label25.Text = "CEP";
             label25.Click += label25_Click;
             // 
-            // label13
-            // 
-            label13.AutoSize = true;
-            label13.Location = new Point(807, 39);
-            label13.Name = "label13";
-            label13.Size = new Size(158, 13);
-            label13.TabIndex = 27;
-            label13.Text = "Carteira Nacional de Saúde";
-            // 
-            // textBox12
-            // 
-            textBox12.Location = new Point(815, 53);
-            textBox12.Name = "textBox12";
-            textBox12.Size = new Size(163, 20);
-            textBox12.TabIndex = 26;
-            // 
             // label23
             // 
             label23.AutoSize = true;
@@ -274,7 +254,7 @@
             // 
             textBox11.Location = new Point(697, 53);
             textBox11.Name = "textBox11";
-            textBox11.Size = new Size(96, 20);
+            textBox11.Size = new Size(156, 20);
             textBox11.TabIndex = 24;
             // 
             // label24
@@ -657,6 +637,7 @@
             // comboBox1
             // 
             comboBox1.FormattingEnabled = true;
+            comboBox1.Items.AddRange(new object[] { "Solteiro", "Casado", "Separado", "Divorciado", "Viúvo" });
             comboBox1.Location = new Point(335, 111);
             comboBox1.Name = "comboBox1";
             comboBox1.Size = new Size(121, 21);
@@ -721,6 +702,7 @@
             // comboBox2
             // 
             comboBox2.FormattingEnabled = true;
+            comboBox2.Items.AddRange(new object[] { "Feminino", "Masculino" });
             comboBox2.Location = new Point(857, 69);
             comboBox2.Name = "comboBox2";
             comboBox2.Size = new Size(121, 21);

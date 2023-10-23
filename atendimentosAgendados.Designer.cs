@@ -42,10 +42,9 @@
             listBox1 = new ListBox();
             groupBox1 = new GroupBox();
             textBox7 = new TextBox();
-            textBox3 = new TextBox();
-            textBox2 = new TextBox();
+            label5 = new Label();
+            button3 = new Button();
             button1 = new Button();
-            label15 = new Label();
             textBox6 = new TextBox();
             label13 = new Label();
             textBox5 = new TextBox();
@@ -54,8 +53,6 @@
             label38 = new Label();
             textBox27 = new TextBox();
             label14 = new Label();
-            label10 = new Label();
-            textBox4 = new TextBox();
             textBox1 = new TextBox();
             comboBox3 = new ComboBox();
             label9 = new Label();
@@ -63,10 +60,7 @@
             label7 = new Label();
             comboBox2 = new ComboBox();
             label6 = new Label();
-            label4 = new Label();
-            label2 = new Label();
             label1 = new Label();
-            button3 = new Button();
             groupBox6.SuspendLayout();
             groupBox1.SuspendLayout();
             SuspendLayout();
@@ -110,10 +104,10 @@
             radioButton2.AutoSize = true;
             radioButton2.Location = new Point(23, 99);
             radioButton2.Name = "radioButton2";
-            radioButton2.Size = new Size(259, 17);
+            radioButton2.Size = new Size(233, 17);
             radioButton2.TabIndex = 29;
             radioButton2.TabStop = true;
-            radioButton2.Text = "Pesquisar por Nome/CPF/ID Atendimento";
+            radioButton2.Text = "Pesquisar por Nome/ID Atendimento";
             radioButton2.UseVisualStyleBackColor = true;
             radioButton2.CheckedChanged += radioButton2_CheckedChanged;
             // 
@@ -202,12 +196,10 @@
             // groupBox1
             // 
             groupBox1.BackgroundImage = Properties.Resources.tela_inicio___fundo;
-            groupBox1.Controls.Add(button3);
             groupBox1.Controls.Add(textBox7);
-            groupBox1.Controls.Add(textBox3);
-            groupBox1.Controls.Add(textBox2);
+            groupBox1.Controls.Add(label5);
+            groupBox1.Controls.Add(button3);
             groupBox1.Controls.Add(button1);
-            groupBox1.Controls.Add(label15);
             groupBox1.Controls.Add(textBox6);
             groupBox1.Controls.Add(label13);
             groupBox1.Controls.Add(textBox5);
@@ -216,8 +208,6 @@
             groupBox1.Controls.Add(label38);
             groupBox1.Controls.Add(textBox27);
             groupBox1.Controls.Add(label14);
-            groupBox1.Controls.Add(label10);
-            groupBox1.Controls.Add(textBox4);
             groupBox1.Controls.Add(textBox1);
             groupBox1.Controls.Add(comboBox3);
             groupBox1.Controls.Add(label9);
@@ -225,8 +215,6 @@
             groupBox1.Controls.Add(label7);
             groupBox1.Controls.Add(comboBox2);
             groupBox1.Controls.Add(label6);
-            groupBox1.Controls.Add(label4);
-            groupBox1.Controls.Add(label2);
             groupBox1.Controls.Add(label1);
             groupBox1.Font = new Font("Tahoma", 8F, FontStyle.Bold, GraphicsUnit.Point);
             groupBox1.ForeColor = Color.DarkSlateGray;
@@ -241,29 +229,34 @@
             // textBox7
             // 
             textBox7.BackColor = Color.FromArgb(224, 224, 224);
-            textBox7.Location = new Point(295, 113);
+            textBox7.Location = new Point(332, 70);
             textBox7.Name = "textBox7";
             textBox7.Size = new Size(118, 20);
-            textBox7.TabIndex = 31;
-            textBox7.TextChanged += textBox7_TextChanged;
+            textBox7.TabIndex = 35;
             // 
-            // textBox3
+            // label5
             // 
-            textBox3.BackColor = Color.FromArgb(224, 224, 224);
-            textBox3.Location = new Point(157, 113);
-            textBox3.Name = "textBox3";
-            textBox3.Size = new Size(118, 20);
-            textBox3.TabIndex = 30;
-            textBox3.TextChanged += textBox3_TextChanged;
+            label5.AutoSize = true;
+            label5.Location = new Point(332, 56);
+            label5.Name = "label5";
+            label5.Size = new Size(34, 13);
+            label5.TabIndex = 34;
+            label5.Text = "Data";
             // 
-            // textBox2
+            // button3
             // 
-            textBox2.BackColor = Color.FromArgb(224, 224, 224);
-            textBox2.Location = new Point(19, 113);
-            textBox2.Name = "textBox2";
-            textBox2.Size = new Size(116, 20);
-            textBox2.TabIndex = 29;
-            textBox2.TextChanged += textBox2_TextChanged;
+            button3.BackColor = Color.DarkSlateGray;
+            button3.Enabled = false;
+            button3.FlatStyle = FlatStyle.Flat;
+            button3.Font = new Font("Tahoma", 8.25F, FontStyle.Bold, GraphicsUnit.Point);
+            button3.ForeColor = Color.LightYellow;
+            button3.Location = new Point(557, 99);
+            button3.Name = "button3";
+            button3.Size = new Size(106, 37);
+            button3.TabIndex = 33;
+            button3.Text = "Iniciar Atendimento";
+            button3.UseVisualStyleBackColor = false;
+            button3.Click += button3_Click;
             // 
             // button1
             // 
@@ -279,16 +272,6 @@
             button1.Text = "Editar";
             button1.UseVisualStyleBackColor = false;
             button1.Click += button1_Click;
-            // 
-            // label15
-            // 
-            label15.AutoSize = true;
-            label15.Location = new Point(295, 96);
-            label15.Name = "label15";
-            label15.Size = new Size(44, 13);
-            label15.TabIndex = 26;
-            label15.Text = "Visita?";
-            label15.Click += label15_Click;
             // 
             // textBox6
             // 
@@ -366,25 +349,6 @@
             label14.Text = "ID Atendimento";
             label14.Click += label14_Click;
             // 
-            // label10
-            // 
-            label10.AutoSize = true;
-            label10.Location = new Point(332, 55);
-            label10.Name = "label10";
-            label10.Size = new Size(74, 13);
-            label10.TabIndex = 16;
-            label10.Text = "Nome social";
-            label10.Click += label10_Click;
-            // 
-            // textBox4
-            // 
-            textBox4.BackColor = Color.FromArgb(224, 224, 224);
-            textBox4.Location = new Point(335, 70);
-            textBox4.Name = "textBox4";
-            textBox4.Size = new Size(282, 20);
-            textBox4.TabIndex = 15;
-            textBox4.TextChanged += textBox4_TextChanged;
-            // 
             // textBox1
             // 
             textBox1.BackColor = Color.FromArgb(224, 224, 224);
@@ -445,50 +409,15 @@
             label6.Size = new Size(0, 13);
             label6.TabIndex = 7;
             // 
-            // label4
-            // 
-            label4.AutoSize = true;
-            label4.Location = new Point(157, 96);
-            label4.Name = "label4";
-            label4.Size = new Size(59, 13);
-            label4.TabIndex = 4;
-            label4.Text = "Retorno?";
-            label4.Click += label4_Click;
-            // 
-            // label2
-            // 
-            label2.AutoSize = true;
-            label2.Location = new Point(19, 96);
-            label2.Name = "label2";
-            label2.Size = new Size(65, 13);
-            label2.TabIndex = 1;
-            label2.Text = "Prioridade";
-            label2.Click += label2_Click;
-            // 
             // label1
             // 
             label1.AutoSize = true;
             label1.Location = new Point(19, 55);
             label1.Name = "label1";
-            label1.Size = new Size(56, 13);
+            label1.Size = new Size(108, 13);
             label1.TabIndex = 0;
-            label1.Text = "Paciente";
+            label1.Text = "Nome do Paciente";
             label1.Click += label1_Click;
-            // 
-            // button3
-            // 
-            button3.BackColor = Color.DarkSlateGray;
-            button3.Enabled = false;
-            button3.FlatStyle = FlatStyle.Flat;
-            button3.Font = new Font("Tahoma", 8.25F, FontStyle.Bold, GraphicsUnit.Point);
-            button3.ForeColor = Color.LightYellow;
-            button3.Location = new Point(557, 99);
-            button3.Name = "button3";
-            button3.Size = new Size(106, 37);
-            button3.TabIndex = 33;
-            button3.Text = "Iniciar Atendimento";
-            button3.UseVisualStyleBackColor = false;
-            button3.Click += button3_Click;
             // 
             // atendimentosAgendados
             // 
@@ -522,8 +451,6 @@
         private Label label38;
         private TextBox textBox27;
         private Label label14;
-        private Label label10;
-        private TextBox textBox4;
         private TextBox textBox1;
         private ComboBox comboBox3;
         private Label label9;
@@ -531,8 +458,6 @@
         private Label label7;
         private ComboBox comboBox2;
         private Label label6;
-        private Label label4;
-        private Label label2;
         private Label label1;
         private Label label11;
         private ListView listView2;
@@ -541,14 +466,12 @@
         private Label label13;
         private TextBox textBox5;
         private Label label12;
-        private Label label15;
         private Button button1;
         private RadioButton radioButton3;
         private RadioButton radioButton2;
         private RadioButton radioButton1;
-        private TextBox textBox3;
-        private TextBox textBox2;
-        private TextBox textBox7;
         private Button button3;
+        private TextBox textBox7;
+        private Label label5;
     }
 }

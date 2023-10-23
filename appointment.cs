@@ -8,20 +8,19 @@ namespace Nursityy
 {
     public class appointment
     {
-        public int id, slot, visita, retorno;
+        public int id, slot;
         public KeyValuePair<int, string> paciente,secretaria;
-        public DateTime visita_data;
+        public DateTime visita_data,data;
 
-        public appointment(int id, int paciente_id, string paciente_nome, string paciente_nome_social,int paciente_prioridade, int retorno, int visita ,int secretaria_id, string secretaria_nome, int slot, DateTime visita_data)
+        public appointment(int id, DateTime visita_data,int slot, int secretaria_id, string secretaria_nome, int paciente_id, string paciente_nome,DateTime data )
         {
             this.id = id;
-            paciente = new KeyValuePair<int, string>(paciente_id,paciente_nome);
-            paciente = new KeyValuePair<int, string>(paciente_prioridade,paciente_nome_social);
-            secretaria = new KeyValuePair<int, string>(secretaria_id, secretaria_nome);
             this.visita_data = visita_data;
-            this.retorno = retorno;
-            this.visita = visita;
             this.slot = slot;
+            secretaria = new KeyValuePair<int, string>(secretaria_id, secretaria_nome);
+            paciente = new KeyValuePair<int, string>(paciente_id, paciente_nome);
+            this.visita_data = data;
+            
         }
 
         public override string ToString()

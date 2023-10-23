@@ -31,9 +31,9 @@ C:\Users\Usuario\source\repos\Nursityy\obj\Debug\net6.0-windows\Nursityy.cadastr
 C:\Users\Usuario\source\repos\Nursityy\obj\Debug\net6.0-windows\Nursityy.listaDePaciente.resources
 C:\Users\Usuario\source\repos\Nursityy\obj\Debug\net6.0-windows\Nursityy.pacientePage.resources
 C:\Users\Usuario\source\repos\Nursityy\obj\Debug\net6.0-windows\Nursityy.agendaDeAtendimentos.resources
-C:\Users\Usuario\source\repos\Nursityy\obj\Debug\net6.0-windows\Nursityy.Atendimento.resources
 C:\Users\Usuario\source\repos\Nursityy\obj\Debug\net6.0-windows\Nursityy.atendimentosAgendados.resources
 C:\Users\Usuario\source\repos\Nursityy\obj\Debug\net6.0-windows\Nursityy.diagnostico.resources
 C:\Users\Usuario\source\repos\Nursityy\obj\Debug\net6.0-windows\Nursityy.Preescricao.resources
 C:\Users\Usuario\source\repos\Nursityy\obj\Debug\net6.0-windows\Nursityy.anamnese.resources
 C:\Users\Usuario\source\repos\Nursityy\obj\Debug\net6.0-windows\Nursityy.historico.resources
+C:\Users\Usuario\source\repos\Nursityy\obj\Debug\net6.0-windows\Nursityy.editarReservaAtendimento.resources

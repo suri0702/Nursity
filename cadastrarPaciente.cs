@@ -25,8 +25,8 @@ namespace Nursityy
         private void atualizarLista(string query)
         {
             command = con.CreateCommand();
-            command.CommandText = "SELECT conta_nome, conta_nome_social, conta_aniversario, conta_sexo, conta_nome_mae, conta_estado_civil, conta_nome_conjuge, conta_tipo_sanguineo, conta_matricula_SAME, conta_RG, conta_RG_orgao_emissor, conta_RG_UF, conta_RG_expedicao, conta_CPF, conta_CNS, conta_CEP, conta_endereco, conta_end_numero, conta_end_complemento, conta_end_bairro, conta_end_cidade, conta_end_UF, conta_end_pais, conta_celular, conta_celular2, conta_email FROM Conta WHERE conta_tipo=2 AND (conta_nome LIKE @query OR conta_CPF LIKE @query";
-            
+            command.CommandText = "SELECT conta_nome, conta_nome_social, conta_aniversario, conta_sexo, conta_nome_mae, conta_estado_civil, conta_nome_conjuge, conta_tipo_sanguineo, conta_matricula_SAME, conta_RG, conta_RG_orgao_emissor, conta_RG_UF, conta_RG_expedicao, conta_CPF, conta_CEP, conta_endereco, conta_end_numero, conta_end_complemento, conta_end_bairro, conta_end_cidade, conta_end_UF, conta_end_pais, conta_celular, conta_celular2, conta_email FROM Conta WHERE conta_tipo=2 AND (conta_nome LIKE @query OR conta_CPF LIKE @query";
+
         }
 
         private void vScrollBar1_Scroll(object sender, ScrollEventArgs e)
@@ -86,7 +86,7 @@ namespace Nursityy
             }
 
             command = con.CreateCommand();
-            command.CommandText = "INSERT INTO conta(conta_nome, conta_nome_social, conta_aniversario, conta_sexo, conta_nome_mae, conta_estado_civil, conta_nome_conjuge, conta_tipo_sanguineo, conta_matricula_SAME, conta_RG, conta_RG_orgao_emissor, conta_RG_UF, conta_RG_expedicao, conta_CPF, conta_CNS, conta_CEP, conta_endereco, conta_end_numero, conta_end_complemento, conta_end_bairro, conta_end_cidade, conta_end_UF, conta_end_pais, conta_celular, conta_celular2, conta_email, conta_data_criacao, conta_tipo) VALUES (@nome, @nomesocial, @aniversario, @sexo, @nomemae, @estadocivil, @nomeconjuge, @tiposanguineo, @matriculaSAME, @RG, @orgaoemissor, @UFcep, @expedicao, @CPF, @CNS, @CEP, @endereco, @numero, @complemento, @bairro, @cidade, @UFend, @pais, @celular, @celular2, @email, @data, 2)";
+            command.CommandText = "INSERT INTO conta(conta_nome, conta_nome_social, conta_aniversario, conta_sexo, conta_nome_mae, conta_estado_civil, conta_nome_conjuge, conta_tipo_sanguineo, conta_matricula_SAME, conta_RG, conta_RG_orgao_emissor, conta_RG_UF, conta_RG_expedicao, conta_CPF, conta_CEP, conta_endereco, conta_end_numero, conta_end_complemento, conta_end_bairro, conta_end_cidade, conta_end_UF, conta_end_pais, conta_celular, conta_celular2, conta_email, conta_data_criacao, conta_tipo) VALUES (@nome, @nomesocial, @aniversario, @sexo, @nomemae, @estadocivil, @nomeconjuge, @tiposanguineo, @matriculaSAME, @RG, @orgaoemissor, @UFcep, @expedicao, @CPF, @CNS, @CEP, @endereco, @numero, @complemento, @bairro, @cidade, @UFend, @pais, @celular, @celular2, @email, @data, 2)";
             command.Parameters.AddWithValue("@nome", textBox1.Text);
             command.Parameters.AddWithValue("@nomesocial", textBox4.Text);
             command.Parameters.AddWithValue("@aniversario", dateTimePicker1.Value.ToString());
@@ -120,7 +120,8 @@ namespace Nursityy
             if (command.ExecuteNonQuery() > 0)
             {
                 MessageBox.Show("Paciente cadastrado com sucesso!");
-            }else
+            }
+            else
                 MessageBox.Show("Erro no cadastro do paciente!");
 
             con.Close();

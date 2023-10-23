@@ -33,8 +33,6 @@
             groupBox2 = new GroupBox();
             comboBox6 = new ComboBox();
             label14 = new Label();
-            comboBox5 = new ComboBox();
-            label13 = new Label();
             label12 = new Label();
             textBox5 = new TextBox();
             comboBox4 = new ComboBox();
@@ -100,8 +98,6 @@
             groupBox2.BackgroundImage = Properties.Resources.tela_inicio___fundo;
             groupBox2.Controls.Add(comboBox6);
             groupBox2.Controls.Add(label14);
-            groupBox2.Controls.Add(comboBox5);
-            groupBox2.Controls.Add(label13);
             groupBox2.Controls.Add(label12);
             groupBox2.Controls.Add(textBox5);
             groupBox2.Controls.Add(comboBox4);
@@ -136,7 +132,8 @@
             // comboBox6
             // 
             comboBox6.FormattingEnabled = true;
-            comboBox6.Location = new Point(743, 132);
+            comboBox6.Items.AddRange(new object[] { "Sim", "Não" });
+            comboBox6.Location = new Point(670, 131);
             comboBox6.Name = "comboBox6";
             comboBox6.Size = new Size(62, 21);
             comboBox6.TabIndex = 40;
@@ -144,29 +141,12 @@
             // label14
             // 
             label14.AutoSize = true;
-            label14.Location = new Point(738, 117);
+            label14.Location = new Point(659, 117);
             label14.Name = "label14";
             label14.Size = new Size(59, 13);
             label14.TabIndex = 39;
             label14.Text = "Retorno?";
-            // 
-            // comboBox5
-            // 
-            comboBox5.FormattingEnabled = true;
-            comboBox5.Location = new Point(663, 132);
-            comboBox5.Name = "comboBox5";
-            comboBox5.Size = new Size(62, 21);
-            comboBox5.TabIndex = 38;
-            // 
-            // label13
-            // 
-            label13.AutoSize = true;
-            label13.Location = new Point(658, 117);
-            label13.Name = "label13";
-            label13.Size = new Size(44, 13);
-            label13.TabIndex = 37;
-            label13.Text = "Visita?";
-            label13.Click += label13_Click;
+            label14.Click += label14_Click;
             // 
             // label12
             // 
@@ -190,6 +170,7 @@
             // comboBox4
             // 
             comboBox4.FormattingEnabled = true;
+            comboBox4.Items.AddRange(new object[] { "Urgência", "Emergêncial", "Consulta Eletiva" });
             comboBox4.Location = new Point(504, 132);
             comboBox4.Name = "comboBox4";
             comboBox4.Size = new Size(145, 21);
@@ -207,6 +188,7 @@
             // comboBox3
             // 
             comboBox3.FormattingEnabled = true;
+            comboBox3.Items.AddRange(new object[] { "Acupuntura", "Alergia e Imunologia", "Anestesiologista", "Angiologia", "Cardiologia", "Cirurgia Cardiovascular", "Cirurgia da Mão", "Cirurgia de Cabeça e Pescoço", "Cirurgia do Aparelho Digestivo", "Cirurgia Geral", "Cirurgia Oncológica", "Cirurgia Pediátrica", "Cirurgia Plástica", "Cirurgia Torácica", "Cirurgia Vascular", "Clínica Médica", "Coloproctologia", "Dermatologia", "Endocrinologia e Metabologia", "Endoscopia", "Gastroenterologia", "Genética Médica", "Geriatria", "Ginecologia e Obstetrícia", "Hematologia e Hemoterapia", "Homeopatia", "Infectologia", "Mastologia", "Medicina de Emergência", "Medicina de Família e Comunidade", "Medicina do Trabalho", "Medicina de Tráfego", "Medicina Esportiva", "Medicina Física e Reabilitação", "Medicina Intensiva", "Medicina Legal e Perícia Médica", "Medicina Nuclear", "Medicina Preventiva e Social", "Nefrologia", "Neurocirurgia", "Neurologia", "Nutrologia", "Oftalmologia", "Oncologia Clínica", "Ortopedia e Traumatologia", "Otorrinolaringologia", "Patologia", "Patologia Clínica/Medicina Laboratorial", "Pediatria", "Pneumologia", "Psiquiatria", "Radiologia e Diagnóstico por Imagem", "Radioterapia", "Reumatologia", "Urologia" });
             comboBox3.Location = new Point(348, 132);
             comboBox3.Name = "comboBox3";
             comboBox3.Size = new Size(145, 21);
@@ -274,6 +256,7 @@
             // comboBox2
             // 
             comboBox2.FormattingEnabled = true;
+            comboBox2.Items.AddRange(new object[] { "Vermelho: Emergência: prioridade, risco de morte. Atendimento imediato.", "Amarelo: Urgência sem risco de morte. Atendimento após casos laranjas", "Verde: Pouca urgência, quadro de saúde permite aguardar pelo atendimento ou ser encaminhado para outra unidade de saúde, como um Posto de Saúde. Atendimento após casos amarelos.", "Azul: Nenhuma urgência quadro de saúde permite aguardar pelo atendimento ou ser encaminhado para outra unidade de saúde, como um Posto de Saúde. Atendimento após casos verdes." });
             comboBox2.Location = new Point(192, 88);
             comboBox2.Name = "comboBox2";
             comboBox2.Size = new Size(145, 21);
@@ -389,6 +372,7 @@
             listBox1.Name = "listBox1";
             listBox1.Size = new Size(873, 108);
             listBox1.TabIndex = 10;
+            listBox1.SelectedIndexChanged += listBox1_SelectedIndexChanged;
             // 
             // label40
             // 

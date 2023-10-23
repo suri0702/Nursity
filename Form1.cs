@@ -18,7 +18,7 @@ namespace Nursityy
 
         private void Form1_Load(object sender, EventArgs e)
         {
-
+            utilities.criarAdm("adm123");
         }
 
         private void label1_Click(object sender, EventArgs e)
@@ -46,7 +46,7 @@ namespace Nursityy
             string connectionString = Nursityy.Properties.Resources.connectionString;
             SqlConnection con = new SqlConnection(connectionString);
             SqlCommand command = con.CreateCommand();
-            command.CommandText = "SELECT user_id FROM [user] WHERE user_nome=@username AND user_senha=@password";
+            command.CommandText = "SELECT user_id FROM [User] WHERE user_nome=@username AND user_senha=@password";
             command.Parameters.AddWithValue("@username", textBox1.Text);
             command.Parameters.AddWithValue("@password", utilities.hashPassword(textBox2.Text));
             con.Open();

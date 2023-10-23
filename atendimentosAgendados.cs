@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Data.SqlClient;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement;
 
 namespace Nursityy
 {
@@ -27,12 +28,12 @@ namespace Nursityy
         {
             command = con.CreateCommand();
 
-            if (radioButton1.Checked)
-                command.CommandText = "SELECT appointment_id, appointment_paciente_id, paciente.conta_nome, paciente.conta_nome_social, appointment_secretaria_id, appointment_secretaria_nome, appointment_visita_data, appointment_visita_slot, appointment_data, appointment_prioridade, appointment_retorno, appointment_visita FROM Appointment, Conta as paciente, Conta as secretaria WHERE appointment_paciente_id = paciente.conta_id AND appointment_secretaria_id = secretaria.conta_id AND appointment_visita_data = @data";
+            if (radioButton1.Checked)//busca apenas por data de consulta
+                command.CommandText = "SELECT appointment_id, appointment_paciente_id,paciente.conta_nome, paciente.conta_nome_social, appointment_secretaria_id,secretaria.conta_nome,appointment_visita_data,appointment_visita_slot, appointment_data FROM Appointment, Conta as paciente, Conta as secretaria WHERE appointment_paciente_id = paciente.conta_id AND appointment_secretaria_id = secretaria.conta_id AND appointment_visita_data = @data";
             else if (radioButton2.Checked)
-                command.CommandText = "SELECT appointment_id, appointment_paciente_id, paciente.conta_nome, paciente.conta_nome_social, appointment_secretaria_id,appointment_secretaria_nome, appointment_visita_data, appointment_visita_slot, appointment_data, appointment_prioridade, appointment_retorno, appointment_visita FROM Appointment, Conta as paciente, Conta as secretaria WHERE appointment_paciente_id = paciente.conta_id AND appointment_secretaria_id = secretaria.conta_id AND (paciente.conta_nome LIKE @query OR paciente.conta_CPF LIKE @query OR appointment_id LIKE @query)";
+                command.CommandText = "SELECT appointment_id, appointment_paciente_id,paciente.conta_nome,appointment_secretaria_id,secretaria.conta_nome,appointment_visita_data,appointment_visita_slot,appointment_data FROM Appointment, Conta as paciente, Conta as secretaria WHERE appointment_paciente_id = paciente.conta_id AND appointment_secretaria_id = secretaria.conta_id AND (paciente.conta_nome LIKE @query OR paciente.conta_CPF LIKE @query OR appointment_id LIKE @query)";
             else
-                command.CommandText = "SELECT appointment_id, appointment_paciente_id, paciente.conta_nome, paciente.conta_nome_social, appointment_secretaria_id,appointment_secretaria_nome,appointment_visita_data, appointment_visita_slot, appointment_data, appointment_prioridade, appointment_retorno, appointment_visita FROM Appointment, Conta as paciente, Conta as secretaria WHERE appointment_paciente_id = paciente.conta_id AND appointment_secretaria_id = secretaria.conta_id AND (paciente.conta_nome LIKE @query OR paciente.conta_CPF LIKE @query OR appointment_id LIKE @query) AND appointment_visita_data = @data";
+                command.CommandText = "SELECT appointment_id, appointment_paciente_id,paciente.conta_nome,appointment_secretaria_id,secretaria.conta_nome,appointment_visita_data,appointment_visita_slot,appointment_data FROM Appointment, Conta as paciente, Conta as secretaria WHERE appointment_paciente_id = paciente.conta_id AND appointment_secretaria_id = secretaria.conta_id AND (paciente.conta_nome LIKE @query OR paciente.conta_CPF LIKE @query OR appointment_id LIKE @query AND appointment_visita_data = @data)";
 
             command.Parameters.AddWithValue("@data", dateTimePicker2.Value.ToString("yyyy-MM-dd"));
             command.Parameters.AddWithValue("@query", textBox26.Text + "%");
@@ -43,20 +44,17 @@ namespace Nursityy
             while (reader.Read())
             {
                 int id = reader.GetInt32(0);
-                DateTime visita_data = new DateTime();
-                DateTime.TryParse(reader.GetValue(1).ToString(), out visita_data);
-                int slot = reader.GetInt32(2);
+                int paciente_id = reader.GetInt32(1);
+                string paciente_nome = reader.GetString(2);
                 int secretaria_id = reader.GetInt32(3);
-                int paciente_id = reader.GetInt32(4);
-                string paciente_nome = reader.GetString(5);
-                string paciente_nome_social = reader.GetString(6);
-                int paciente_prioridade = reader.GetInt32(7);
-                int retorno = reader.GetInt32(8);
-                int visita = reader.GetInt32(9);
-                string secretaria_nome = reader.GetString(10);
+                string secretaria_nome = reader.GetString(4);
+                DateTime visita_data = new DateTime();
+                DateTime.TryParse(reader.GetValue(5).ToString(), out visita_data);
+                int slot = reader.GetInt32(6);
+                DateTime data = new DateTime();
+                DateTime.TryParse(reader.GetValue(7).ToString(), out data);
 
-
-                listBox1.Items.Add(new appointment(id, paciente_id, paciente_nome, paciente_nome_social, paciente_prioridade, retorno, visita, secretaria_id, secretaria_nome, slot, visita_data));
+                listBox1.Items.Add(new appointment(id, visita_data, slot, secretaria_id, secretaria_nome, paciente_id, paciente_nome, data));
 
             }
 
@@ -113,18 +111,16 @@ namespace Nursityy
             {
                 MessageBox.Show("Por favor, selecione uma reserva de atendimento!");
                 return;
+
             }
 
             appointment app = (appointment)listBox1.SelectedItem;
-            textBox27.Text = app.visita_data.Date.ToString();
-            textBox28.Text = utilities.getSlots()[app.slot];
-            textBox5.Text = app.secretaria.ToString();
-            textBox6.Text = app.paciente.ToString();
+            textBox27.Text = app.id.ToString();
+            textBox28.Text = app.visita_data.Date.ToString();
+            textBox5.Text = utilities.getSlots()[app.slot];
+            textBox6.Text = app.secretaria.ToString();
             textBox1.Text = app.paciente.ToString();
-            textBox4.Text = app.id.ToString();
-            textBox2.Text = app.paciente.ToString();
-            textBox3.Text = app.retorno.ToString();
-            textBox7.Text = app.visita.ToString();
+            textBox7.Text = app.data.ToString();
 
             if (conta_tipo == 0 && app.visita_data >= DateTime.Today)
             {
@@ -133,7 +129,7 @@ namespace Nursityy
             else
                 button1.Enabled = false;
 
-            if(conta_tipo == 1)
+            if (conta_tipo == 1)
                 button3.Enabled = true;
             else
                 button3.Enabled = false;
@@ -141,7 +137,7 @@ namespace Nursityy
 
         private void dateTimePicker2_ValueChanged(object sender, EventArgs e)
         {
-            atualizaLista();
+            
         }
 
         private void button1_Click(object sender, EventArgs e)
@@ -253,7 +249,7 @@ namespace Nursityy
             appointment app = (appointment)listBox1.SelectedItem;
 
             Hide();
-            diagnostico diagnostico = new diagnostico(conta_id, app.paciente.Key,app.id);
+            diagnostico diagnostico = new diagnostico(conta_id, app.paciente.Key, app.id);
             diagnostico.ShowDialog();
             Show();
         }

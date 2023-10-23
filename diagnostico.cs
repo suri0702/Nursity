@@ -53,8 +53,9 @@ namespace Nursityy
         private void atualizaLista()
         {
             command = con.CreateCommand();
-            command.CommandText = "SELECT atendimento_id, paciente.conta_id, paciente.conta_nome, secretaria.conta_id, secretaria.conta_nome,medico.conta_id, medico.conta_nome, atendimento_data, atendimento_hip_versao_diagnostico, atendimento_hip_cid_principal, atendimento_hip_cid_causas_associadas, atendimento_hip_tempo_doenca, atendimento_hip_status, atendimento_hip_gravidade, atendimento_hip_principais_sinais_sintomas, atendimento_hip_diagnostico_inicial, atendimento_hip_obs_adicionais, atendimento_hip_versao_diagnostico_secundario, atendimento_hip_cid_secundario, atendimento_hip_diagnostico_secundario, atendimento_hip_obs_adicionais_secundarias FROM Atendimento, Appointment, Conta as paciente, Conta as secretaria, Conta as medico WHERE atendimento_appointment_id = @appointment_id AND atendimento_paciente_id = paciente.conta_id AND atendimento_secretaria_id = secretaria.conta_id AND atendimento_medico_id = medico.conta_id AND paciente.conta_id = @paciente_id";
+            command.CommandText = "SELECT appointment_id, paciente.conta_id, paciente.conta_nome, secretaria.conta_id, secretaria.conta_nome, atendimento_data, atendimento_hip_versao_diagnostico, atendimento_hip_cid_principal, atendimento_hip_cid_causas_associadas, atendimento_hip_tempo_doenca, atendimento_hip_status, atendimento_hip_gravidade, atendimento_hip_principais_sinais_sintomas, atendimento_hip_diagnostico_inicial, atendimento_hip_obs_adicionais, atendimento_hip_versao_diagnostico_secundario, atendimento_hip_cid_secundario, atendimento_hip_diagnostico_secundario, atendimento_hip_obs_adicionais_secundarias FROM Atendimento, Appointment, Conta as paciente, Conta as secretaria WHERE appointment_id = @appointment_id AND atendimento_paciente_id = paciente.conta_id AND atendimento_secretaria_id = secretaria.conta_id AND paciente.conta_id = @paciente_id";
             command.Parameters.AddWithValue("@paciente_id", paciente_id);
+            command.Parameters.AddWithValue("@appointment_id", appointment_id);
 
             con.Open();
 
@@ -64,36 +65,30 @@ namespace Nursityy
 
             while (reader.Read())
             {
-                int atendimento_id = reader.GetInt32(0);
+                int appointment_id = reader.GetInt32(0);
                 int paciente_id = reader.GetInt32(1);
                 string paciente_nome = reader.GetString(2);
                 int secretaria_id = reader.GetInt32(3);
                 string secretaria_nome = reader.GetString(4);
-                int medico_id = reader.GetInt32(5);
-                string medico_nome = reader.GetString(6);
                 DateTime atendimento_data = new DateTime();
-                DateTime.TryParse(reader.GetValue(7).ToString(), out atendimento_data);
-                string atendimento_hip_versao_diagnostico = reader.GetString(8);
-                string atendimento_hip_cid_principal = reader.GetString(9);
-                string atendimento_hip_cid_causas_associadas = reader.GetString(10);
-                string atendimento_hip_tempo_doenca = reader.GetString(11);
-                string atendimento_hip_status = reader.GetString(12);
-                string atendimento_hip_gravidade = reader.GetString(13);
-                string atendimento_hip_principais_sinais_sintomas = reader.GetString(14);
-                string atendimento_hip_diagnostico_inicial = reader.GetString(15);
-                string atendimento_hip_obs_adicionais = reader.GetString(16);
-                string atendimento_hip_versao_diagnostico_secundario = reader.GetString(17);
-                string atendimento_hip_cid_secundario = reader.GetString(18);
-                string atendimento_hip_diagnostico_secundario = reader.GetString(19);
-                string atendimento_hip_obs_adicionais_secundarias = reader.GetString(20);
+                DateTime.TryParse(reader.GetValue(5).ToString(), out atendimento_data);
+                string atendimento_hip_versao_diagnostico = reader.GetString(6);
+                string atendimento_hip_cid_principal = reader.GetString(7);
+                string atendimento_hip_cid_causas_associadas = reader.GetString(8);
+                string atendimento_hip_tempo_doenca = reader.GetString(9);
+                string atendimento_hip_status = reader.GetString(10);
+                string atendimento_hip_gravidade = reader.GetString(11);
+                string atendimento_hip_principais_sinais_sintomas = reader.GetString(12);
+                string atendimento_hip_diagnostico_inicial = reader.GetString(13);
+                string atendimento_hip_obs_adicionais = reader.GetString(14);
+                string atendimento_hip_versao_diagnostico_secundario = reader.GetString(15);
+                string atendimento_hip_cid_secundario = reader.GetString(16);
+                string atendimento_hip_diagnostico_secundario = reader.GetString(17);
+                string atendimento_hip_obs_adicionais_secundarias = reader.GetString(18);
 
-                listBox1.Items.Add(new visita(atendimento_id, paciente_id, paciente_nome, secretaria_id, secretaria_nome, medico_id, medico_nome, atendimento_data, atendimento_hip_versao_diagnostico, atendimento_hip_cid_principal, atendimento_hip_cid_causas_associadas, atendimento_hip_tempo_doenca, atendimento_hip_status, atendimento_hip_gravidade, atendimento_hip_principais_sinais_sintomas, atendimento_hip_diagnostico_inicial, atendimento_hip_obs_adicionais, atendimento_hip_versao_diagnostico_secundario, atendimento_hip_cid_secundario, atendimento_hip_diagnostico_secundario, atendimento_hip_obs_adicionais_secundarias));
+         
 
-
-
-
-
-
+                listBox1.Items.Add(new visita(appointment_id,atendimento_data,atendimento_hip_cid_principal,atendimento_hip_cid_causas_associadas,atendimento_hip_tempo_doenca,atendimento_hip_status,atendimento_hip_gravidade,atendimento_hip_principais_sinais_sintomas,atendimento_hip_diagnostico_inicial,atendimento_hip_obs_adicionais,atendimento_hip_versao_diagnostico_secundario,atendimento_hip_cid_secundario,atendimento_hip_diagnostico_secundario,atendimento_hip_obs_adicionais_secundarias,secretaria_id,secretaria_nome,paciente_id,paciente_nome));
 
 
             }
@@ -138,19 +133,7 @@ namespace Nursityy
             visita v = (visita)listBox1.SelectedItem;
             textBox28.Text = v.atendimento_id.ToString();
             textBox29.Text = v.paciente.ToString();
-            textBox7.Text = v.atendimento_hip_versao_diagnostico;
-            textBox8.Text = v.atendimento_hip_cid_principal;
-            textBox6.Text = v.atendimento_hip_cid_causas_associadas;
-            textBox9.Text = v.atendimento_hip_tempo_doenca;
-            textBox10.Text = v.atendimento_hip_status;
-            textBox13.Text = v.atendimento_hip_gravidade;
-            textBox2.Text = v.atendimento_hip_principais_sinais_sintomas;
-            textBox1.Text = v.atendimento_hip_diagnostico_inicial;
-            textBox4.Text = v.atendimento_hip_obs_adicionais;
-            textBox11.Text = v.atendimento_hip_versao_diagnostico_secundario;
-            textBox12.Text = v.atendimento_hip_cid_secundario;
-            textBox5.Text = v.atendimento_hip_diagnostico_secundario;
-            textBox3.Text = v.atendimento_hip_obs_adicionais_secundarias;
+            
 
 
 
@@ -173,7 +156,7 @@ namespace Nursityy
 
             con.Open();
 
-            command.CommandText = "INSERT INTO Appointment (atendimento_appointment_id, atendimento_data,atendimento_hip_versao_diagnostico, atendimento_hip_cid_principal, atendimento_hip_cid_causas_associadas, atendimento_hip_tempo_doenca, atendimento_hip_status, atendimento_hip_gravidade, atendimento_hip_principais_sinais_sintomas, atendimento_hip_diagnostico_inicial, atendimento_hip_obs_adicionais, atendimento_hip_versao_diagnostico_secundario, atendimento_hip_cid_secundario, atendimento_hip_diagnostico_secundario, atendimento_hip_obs_adicionais_secundarias VALUES (@id, @data,@versao_diagnostico, @cid_principal, @cid_causas_associadas, @tempo_doenca, @status, @gravidade, @principais_sinais_sintomas, @diagnostico_inicial, @obs_adicionais, @versao_diagnostico_secundario, @cid_secundario, @diagnostico_secundario, @obs_adicionais_secundarias))";
+            command.CommandText = "INSERT INTO Appointment (appointment_id, atendimento_data,atendimento_hip_versao_diagnostico, atendimento_hip_cid_principal, atendimento_hip_cid_causas_associadas, atendimento_hip_tempo_doenca, atendimento_hip_status, atendimento_hip_gravidade, atendimento_hip_principais_sinais_sintomas, atendimento_hip_diagnostico_inicial, atendimento_hip_obs_adicionais, atendimento_hip_versao_diagnostico_secundario, atendimento_hip_cid_secundario, atendimento_hip_diagnostico_secundario, atendimento_hip_obs_adicionais_secundarias VALUES (@id, @data,@versao_diagnostico, @cid_principal, @cid_causas_associadas, @tempo_doenca, @status, @gravidade, @principais_sinais_sintomas, @diagnostico_inicial, @obs_adicionais, @versao_diagnostico_secundario, @cid_secundario, @diagnostico_secundario, @obs_adicionais_secundarias))";
             command.Parameters.AddWithValue("@id", appointment_id);
             command.Parameters.AddWithValue("@versao_diagnostico", textBox7.Text);
             command.Parameters.AddWithValue("@cid_principal", textBox8.Text);

@@ -42,7 +42,6 @@
             label2 = new Label();
             label1 = new Label();
             groupBox2 = new GroupBox();
-            listBox2 = new ListBox();
             label4 = new Label();
             textBox6 = new TextBox();
             label6 = new Label();
@@ -66,6 +65,7 @@
             label8 = new Label();
             textBox4 = new TextBox();
             label7 = new Label();
+            listBox1 = new ListBox();
             groupBox1.SuspendLayout();
             groupBox2.SuspendLayout();
             groupBox3.SuspendLayout();
@@ -147,6 +147,7 @@
             comboBox1.Font = new Font("Tahoma", 8.5F, FontStyle.Regular, GraphicsUnit.Point);
             comboBox1.ForeColor = Color.DarkSlateGray;
             comboBox1.FormattingEnabled = true;
+            comboBox1.Items.AddRange(new object[] { "0", "1" });
             comboBox1.Location = new Point(83, 163);
             comboBox1.Name = "comboBox1";
             comboBox1.Size = new Size(158, 21);
@@ -219,7 +220,7 @@
             // 
             groupBox2.BackColor = Color.Snow;
             groupBox2.BackgroundImage = (Image)resources.GetObject("groupBox2.BackgroundImage");
-            groupBox2.Controls.Add(listBox2);
+            groupBox2.Controls.Add(listBox1);
             groupBox2.Controls.Add(label4);
             groupBox2.Controls.Add(textBox6);
             groupBox2.Controls.Add(label6);
@@ -231,18 +232,7 @@
             groupBox2.TabIndex = 6;
             groupBox2.TabStop = false;
             groupBox2.Text = "Pesquisar Conta";
-            // 
-            // listBox2
-            // 
-            listBox2.BackColor = Color.White;
-            listBox2.ForeColor = Color.DarkSlateGray;
-            listBox2.FormattingEnabled = true;
-            listBox2.ItemHeight = 14;
-            listBox2.Location = new Point(14, 81);
-            listBox2.Name = "listBox2";
-            listBox2.Size = new Size(240, 326);
-            listBox2.TabIndex = 9;
-            listBox2.SelectedIndexChanged += listBox2_SelectedIndexChanged;
+            groupBox2.Enter += groupBox2_Enter;
             // 
             // label4
             // 
@@ -491,6 +481,18 @@
             label7.TextAlign = ContentAlignment.MiddleCenter;
             label7.Click += label7_Click;
             // 
+            // listBox1
+            // 
+            listBox1.BackColor = Color.White;
+            listBox1.ForeColor = Color.DarkSlateGray;
+            listBox1.FormattingEnabled = true;
+            listBox1.ItemHeight = 14;
+            listBox1.Location = new Point(14, 76);
+            listBox1.Name = "listBox1";
+            listBox1.Size = new Size(240, 326);
+            listBox1.TabIndex = 10;
+            listBox1.SelectedIndexChanged += listBox1_SelectedIndexChanged_1;
+            // 
             // adminPage
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
@@ -530,7 +532,6 @@
         private ComboBox comboBox1;
         private Label label11;
         private Button button1;
-        private ListBox listBox2;
         private Label label4;
         private GroupBox groupBox3;
         private Label label5;
@@ -552,5 +553,6 @@
         private Label label16;
         private TextBox textBox12;
         private TextBox textBox13;
+        private ListBox listBox1;
     }
 }

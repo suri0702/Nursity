@@ -28,11 +28,11 @@ namespace Nursityy
 
             SqlDataReader reader = command.ExecuteReader();
 
-            listBox2.Items.Clear();
+            listBox1.Items.Clear();
 
             while (reader.Read())
             {
-                listBox2.Items.Add(new conta(reader.GetInt32(0), reader.GetString(1), reader.GetInt32(2)));
+                listBox1.Items.Add(new conta(reader.GetInt32(0), reader.GetString(1), reader.GetInt32(2)));
 
             }
 
@@ -107,50 +107,10 @@ namespace Nursityy
 
         private void textBox6_TextChanged(object sender, EventArgs e)
         {
-            atualizaLista(textBox5.Text);
+            atualizaLista(textBox6.Text);
 
         }
 
-
-        private void listBox2_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            int conta_id;
-            try
-            {
-                conta_id = ((conta)listBox2.SelectedItem).getId();
-            }
-            catch (Exception)
-            {
-                return;
-            }
-
-            SqlConnection con = new SqlConnection(Properties.Resources.connectionString);
-            SqlCommand command = con.CreateCommand();
-            command.CommandText = "SELECT user_nome, conta_nome, conta_aniversario, conta_celular, conta_tipo, conta_comentarios, conta_data_criacao FROM [User], conta WHERE user_id = conta_user_id AND conta_id = @id";
-            command.Parameters.AddWithValue("@id", conta_id);
-            con.Open();
-
-            SqlDataReader reader = command.ExecuteReader();
-            if (reader.Read())
-            {
-                textBox4.Text = conta_id.ToString();
-                textBox5.Text = reader.GetValue(0).ToString();
-                textBox7.Text = reader.GetValue(1).ToString();
-                textBox8.Text = reader.GetValue(2).ToString();
-                textBox9.Text = reader.GetValue(3).ToString();
-
-                if (reader.GetInt32(4) == 0)
-                    textBox10.Text = "Secretaria";
-                else
-                    textBox10.Text = "Medico";
-
-                textBox13.Text = reader.GetValue(5).ToString();
-                textBox11.Text = reader.GetValue(6).ToString();
-            }
-
-            con.Close();
-
-        }
 
         private void button1_Click(object sender, EventArgs e)
         {
@@ -208,13 +168,13 @@ namespace Nursityy
 
         private void button2_Click(object sender, EventArgs e)
         {
-            if (textBox7.Text == "")
+            if (textBox5.Text == "")
                 return;
 
             SqlConnection con = new SqlConnection(Properties.Resources.connectionString);
             SqlCommand command = con.CreateCommand();
             command.CommandText = "DELETE FROM [User] WHERE user_nome = @username";
-            command.Parameters.AddWithValue("@username", textBox7.Text);
+            command.Parameters.AddWithValue("@username", textBox5.Text);
             con.Open();
 
             if (command.ExecuteNonQuery() > 0)
@@ -222,6 +182,7 @@ namespace Nursityy
             else
                 MessageBox.Show("Erro ao deletar a conta!");
             con.Close();
+
             atualizaLista("");
             textBox4.Clear();
             textBox5.Clear();
@@ -231,10 +192,56 @@ namespace Nursityy
             textBox10.Clear();
             textBox13.Clear();
             textBox11.Clear();
+
         }
 
         private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
         {
+
+        }
+
+        private void groupBox2_Enter(object sender, EventArgs e)
+        {
+
+        }
+
+        private void listBox1_SelectedIndexChanged_1(object sender, EventArgs e)
+        {
+            int conta_id;
+            try
+            {
+                conta_id = ((conta)listBox1.SelectedItem).getId();
+            }
+            catch (Exception)
+            {
+                return;
+            }
+
+            SqlConnection con = new SqlConnection(Properties.Resources.connectionString);
+            SqlCommand command = con.CreateCommand();
+            command.CommandText = "SELECT user_nome, conta_nome, conta_aniversario, conta_celular, conta_tipo, conta_comentarios, conta_data_criacao FROM [User], Conta WHERE user_id = conta_user_id AND conta_id = @id";
+            command.Parameters.AddWithValue("@id", conta_id);
+            con.Open();
+
+            SqlDataReader reader = command.ExecuteReader();
+            if (reader.Read())
+            {
+                textBox4.Text = conta_id.ToString();
+                textBox5.Text = reader.GetValue(0).ToString();
+                textBox7.Text = reader.GetValue(1).ToString();
+                textBox8.Text = reader.GetValue(2).ToString();
+                textBox9.Text = reader.GetValue(3).ToString();
+
+                if (reader.GetInt32(4) == 0)
+                    textBox10.Text = "Secretária";
+                else
+                    textBox10.Text = "Médico";
+
+                textBox13.Text = reader.GetValue(5).ToString();
+                textBox11.Text = reader.GetValue(6).ToString();
+            }
+
+            con.Close();
 
         }
     }

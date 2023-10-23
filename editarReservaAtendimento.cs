@@ -8,7 +8,6 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Data.SqlClient;
-using System.Security.Cryptography.Xml;
 
 namespace Nursityy
 {
@@ -28,9 +27,8 @@ namespace Nursityy
             textBox6.Text = app.secretaria.ToString();
             textBox1.Text = app.paciente.ToString();
             textBox4.Text = app.paciente.ToString();
-            textBox2.Text = app.paciente.ToString();
-            textBox3.Text = app.retorno.ToString();
-            textBox7.Text = app.visita.ToString();
+
+
 
             dateTimePicker1.MinDate = DateTime.Today;
 
@@ -67,6 +65,8 @@ namespace Nursityy
                     comboBox1.SelectedItem = slot;
                 }
             }
+
+
             con.Close();
         }
 
@@ -115,5 +115,7 @@ namespace Nursityy
         {
             atualizaCombo(1);
         }
+
+
     }
 }

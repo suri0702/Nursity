@@ -57,7 +57,7 @@ namespace Nursityy
             SqlCommand command = con.CreateCommand();
 
             command.CommandText = "INSERT INTO [User] (user_nome, user_senha) VALUES (@usuario,@senha)";
-            command.Parameters.AddWithValue("@usuario","ADM");
+            command.Parameters.AddWithValue("@usuario","admin");
             command.Parameters.AddWithValue("@senha", hashPassword(senha));
 
             con.Open();
