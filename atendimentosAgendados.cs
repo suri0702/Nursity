@@ -249,7 +249,7 @@ namespace Nursityy
             appointment app = (appointment)listBox1.SelectedItem;
 
             Hide();
-            diagnostico diagnostico = new diagnostico(conta_id, app.paciente.Key, app.id);
+            diagnostico diagnostico = new diagnostico(app.paciente.Key, app.id);
             diagnostico.ShowDialog();
             Show();
         }

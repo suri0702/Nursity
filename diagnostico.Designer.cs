@@ -158,7 +158,7 @@
             button3.Name = "button3";
             button3.Size = new Size(109, 46);
             button3.TabIndex = 22;
-            button3.Text = "Iniciar Anamnese";
+            button3.Text = "Iniciar preescrição";
             button3.UseVisualStyleBackColor = false;
             // 
             // groupBox6

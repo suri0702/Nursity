@@ -25,7 +25,7 @@ namespace Nursityy
 
         public override string ToString()
         {
-            return id.ToString() + ":" + paciente.Value + ":" + visita_data.Date.ToString() + "=>" + utilities.getSlots()[slot];
+            return id.ToString() + " : " + paciente.Value + ": " + visita_data.Date.ToString() + " => " + utilities.getSlots()[slot];
         }
     }
 }

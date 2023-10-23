@@ -7,18 +7,16 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Drawing.Printing;
 
 namespace Nursityy
 {
     public partial class Preescricao : Form
     {
-        int conta_id, paciente_id, appointment_id;
-        public Preescricao(int conta_id, int paciente_id, int appointment_id)
+        public Preescricao()
         {
             InitializeComponent();
-            this.conta_id = conta_id;
-            this.paciente_id = paciente_id;
-            this.appointment_id = appointment_id;
+
         }
 
         private void Preescricao_Load(object sender, EventArgs e)
@@ -52,6 +50,11 @@ namespace Nursityy
         private void printDocument1_PrintPage(object sender, System.Drawing.Printing.PrintPageEventArgs e)
         {
 
+        }
+
+        private void printDocument1_PrintPage_1(object sender, PrintPageEventArgs e)
+        {
+            
         }
     }
 }
