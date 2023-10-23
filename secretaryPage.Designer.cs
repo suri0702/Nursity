@@ -41,9 +41,10 @@
             button1.FlatStyle = FlatStyle.Flat;
             button1.Font = new Font("Tahoma", 13F, FontStyle.Bold, GraphicsUnit.Point);
             button1.ForeColor = Color.LightYellow;
-            button1.Location = new Point(440, 225);
+            button1.Location = new Point(718, 404);
+            button1.Margin = new Padding(10);
             button1.Name = "button1";
-            button1.Size = new Size(172, 77);
+            button1.Size = new Size(214, 104);
             button1.TabIndex = 0;
             button1.Text = "Editar Conta";
             button1.UseVisualStyleBackColor = false;
@@ -55,9 +56,11 @@
             button2.FlatStyle = FlatStyle.Flat;
             button2.Font = new Font("Tahoma", 13F, FontStyle.Bold, GraphicsUnit.Point);
             button2.ForeColor = Color.LightYellow;
-            button2.Location = new Point(208, 110);
+            button2.Location = new Point(438, 241);
+            button2.Margin = new Padding(10);
             button2.Name = "button2";
-            button2.Size = new Size(172, 77);
+            button2.Padding = new Padding(10);
+            button2.Size = new Size(214, 104);
             button2.TabIndex = 1;
             button2.Text = "Pacientes";
             button2.UseVisualStyleBackColor = false;
@@ -66,11 +69,11 @@
             // label1
             // 
             label1.AutoSize = true;
-            label1.Font = new Font("Tahoma", 12F, FontStyle.Bold, GraphicsUnit.Point);
+            label1.Font = new Font("Tahoma", 16F, FontStyle.Bold, GraphicsUnit.Point);
             label1.ForeColor = Color.DarkSlateGray;
-            label1.Location = new Point(340, 9);
+            label1.Location = new Point(600, 23);
             label1.Name = "label1";
-            label1.Size = new Size(123, 19);
+            label1.Size = new Size(170, 27);
             label1.TabIndex = 4;
             label1.Text = "Bem vindo(a)!";
             // 
@@ -80,9 +83,10 @@
             button3.FlatStyle = FlatStyle.Flat;
             button3.Font = new Font("Tahoma", 13F, FontStyle.Bold, GraphicsUnit.Point);
             button3.ForeColor = Color.LightYellow;
-            button3.Location = new Point(440, 110);
+            button3.Location = new Point(718, 241);
+            button3.Margin = new Padding(10);
             button3.Name = "button3";
-            button3.Size = new Size(172, 77);
+            button3.Size = new Size(214, 104);
             button3.TabIndex = 5;
             button3.Text = "Agendar Atendimento";
             button3.UseVisualStyleBackColor = false;
@@ -94,9 +98,10 @@
             button4.FlatStyle = FlatStyle.Flat;
             button4.Font = new Font("Tahoma", 13F, FontStyle.Bold, GraphicsUnit.Point);
             button4.ForeColor = Color.LightYellow;
-            button4.Location = new Point(208, 225);
+            button4.Location = new Point(438, 404);
+            button4.Margin = new Padding(10);
             button4.Name = "button4";
-            button4.Size = new Size(172, 77);
+            button4.Size = new Size(214, 104);
             button4.TabIndex = 6;
             button4.Text = "Atendimentos agendados";
             button4.UseVisualStyleBackColor = false;
@@ -106,7 +111,7 @@
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(800, 450);
+            ClientSize = new Size(1370, 749);
             Controls.Add(button4);
             Controls.Add(button3);
             Controls.Add(label1);

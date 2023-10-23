@@ -80,7 +80,7 @@
             groupBox6.Controls.Add(label40);
             groupBox6.Font = new Font("Tahoma", 8F, FontStyle.Bold, GraphicsUnit.Point);
             groupBox6.ForeColor = Color.DarkSlateGray;
-            groupBox6.Location = new Point(60, 31);
+            groupBox6.Location = new Point(103, 83);
             groupBox6.Name = "groupBox6";
             groupBox6.Size = new Size(396, 142);
             groupBox6.TabIndex = 21;
@@ -90,7 +90,7 @@
             // radioButton3
             // 
             radioButton3.AutoSize = true;
-            radioButton3.Location = new Point(23, 119);
+            radioButton3.Location = new Point(54, 111);
             radioButton3.Name = "radioButton3";
             radioButton3.Size = new Size(155, 17);
             radioButton3.TabIndex = 30;
@@ -102,7 +102,7 @@
             // radioButton2
             // 
             radioButton2.AutoSize = true;
-            radioButton2.Location = new Point(23, 99);
+            radioButton2.Location = new Point(54, 91);
             radioButton2.Name = "radioButton2";
             radioButton2.Size = new Size(233, 17);
             radioButton2.TabIndex = 29;
@@ -114,7 +114,7 @@
             // radioButton1
             // 
             radioButton1.AutoSize = true;
-            radioButton1.Location = new Point(23, 79);
+            radioButton1.Location = new Point(54, 71);
             radioButton1.Name = "radioButton1";
             radioButton1.Size = new Size(131, 17);
             radioButton1.TabIndex = 28;
@@ -142,7 +142,7 @@
             // label11
             // 
             label11.AutoSize = true;
-            label11.Location = new Point(17, 56);
+            label11.Location = new Point(48, 48);
             label11.Name = "label11";
             label11.Size = new Size(62, 13);
             label11.TabIndex = 22;
@@ -151,7 +151,7 @@
             // 
             // dateTimePicker2
             // 
-            dateTimePicker2.Location = new Point(55, 23);
+            dateTimePicker2.Location = new Point(86, 15);
             dateTimePicker2.Name = "dateTimePicker2";
             dateTimePicker2.Size = new Size(263, 20);
             dateTimePicker2.TabIndex = 21;
@@ -159,7 +159,7 @@
             // 
             // textBox26
             // 
-            textBox26.Location = new Point(84, 53);
+            textBox26.Location = new Point(115, 45);
             textBox26.Name = "textBox26";
             textBox26.Size = new Size(234, 20);
             textBox26.TabIndex = 18;
@@ -168,7 +168,7 @@
             // label3
             // 
             label3.AutoSize = true;
-            label3.Location = new Point(17, 26);
+            label3.Location = new Point(48, 18);
             label3.Name = "label3";
             label3.Size = new Size(34, 13);
             label3.TabIndex = 17;
@@ -187,7 +187,7 @@
             // 
             listBox1.FormattingEnabled = true;
             listBox1.ItemHeight = 15;
-            listBox1.Location = new Point(60, 204);
+            listBox1.Location = new Point(103, 256);
             listBox1.Name = "listBox1";
             listBox1.Size = new Size(1165, 409);
             listBox1.TabIndex = 10;
@@ -198,8 +198,6 @@
             groupBox1.BackgroundImage = Properties.Resources.tela_inicio___fundo;
             groupBox1.Controls.Add(textBox7);
             groupBox1.Controls.Add(label5);
-            groupBox1.Controls.Add(button3);
-            groupBox1.Controls.Add(button1);
             groupBox1.Controls.Add(textBox6);
             groupBox1.Controls.Add(label13);
             groupBox1.Controls.Add(textBox5);
@@ -218,7 +216,7 @@
             groupBox1.Controls.Add(label1);
             groupBox1.Font = new Font("Tahoma", 8F, FontStyle.Bold, GraphicsUnit.Point);
             groupBox1.ForeColor = Color.DarkSlateGray;
-            groupBox1.Location = new Point(472, 31);
+            groupBox1.Location = new Point(515, 83);
             groupBox1.Name = "groupBox1";
             groupBox1.Size = new Size(753, 142);
             groupBox1.TabIndex = 20;
@@ -229,7 +227,7 @@
             // textBox7
             // 
             textBox7.BackColor = Color.FromArgb(224, 224, 224);
-            textBox7.Location = new Point(332, 70);
+            textBox7.Location = new Point(375, 88);
             textBox7.Name = "textBox7";
             textBox7.Size = new Size(118, 20);
             textBox7.TabIndex = 35;
@@ -237,7 +235,7 @@
             // label5
             // 
             label5.AutoSize = true;
-            label5.Location = new Point(332, 56);
+            label5.Location = new Point(375, 74);
             label5.Name = "label5";
             label5.Size = new Size(34, 13);
             label5.TabIndex = 34;
@@ -250,9 +248,9 @@
             button3.FlatStyle = FlatStyle.Flat;
             button3.Font = new Font("Tahoma", 8.25F, FontStyle.Bold, GraphicsUnit.Point);
             button3.ForeColor = Color.LightYellow;
-            button3.Location = new Point(557, 99);
+            button3.Location = new Point(1166, 684);
             button3.Name = "button3";
-            button3.Size = new Size(106, 37);
+            button3.Size = new Size(102, 42);
             button3.TabIndex = 33;
             button3.Text = "Iniciar Atendimento";
             button3.UseVisualStyleBackColor = false;
@@ -265,9 +263,9 @@
             button1.FlatStyle = FlatStyle.Flat;
             button1.Font = new Font("Tahoma", 8.25F, FontStyle.Bold, GraphicsUnit.Point);
             button1.ForeColor = Color.LightYellow;
-            button1.Location = new Point(428, 99);
+            button1.Location = new Point(1039, 684);
             button1.Name = "button1";
-            button1.Size = new Size(106, 37);
+            button1.Size = new Size(102, 42);
             button1.TabIndex = 28;
             button1.Text = "Editar";
             button1.UseVisualStyleBackColor = false;
@@ -276,7 +274,7 @@
             // textBox6
             // 
             textBox6.BackColor = Color.FromArgb(224, 224, 224);
-            textBox6.Location = new Point(503, 32);
+            textBox6.Location = new Point(546, 50);
             textBox6.Name = "textBox6";
             textBox6.Size = new Size(145, 20);
             textBox6.TabIndex = 24;
@@ -285,7 +283,7 @@
             // label13
             // 
             label13.AutoSize = true;
-            label13.Location = new Point(505, 16);
+            label13.Location = new Point(548, 34);
             label13.Name = "label13";
             label13.Size = new Size(86, 13);
             label13.TabIndex = 23;
@@ -295,7 +293,7 @@
             // textBox5
             // 
             textBox5.BackColor = Color.FromArgb(224, 224, 224);
-            textBox5.Location = new Point(342, 32);
+            textBox5.Location = new Point(385, 50);
             textBox5.Name = "textBox5";
             textBox5.Size = new Size(145, 20);
             textBox5.TabIndex = 22;
@@ -304,7 +302,7 @@
             // label12
             // 
             label12.AutoSize = true;
-            label12.Location = new Point(344, 16);
+            label12.Location = new Point(387, 34);
             label12.Name = "label12";
             label12.Size = new Size(91, 13);
             label12.TabIndex = 21;
@@ -314,7 +312,7 @@
             // textBox28
             // 
             textBox28.BackColor = Color.FromArgb(224, 224, 224);
-            textBox28.Location = new Point(179, 32);
+            textBox28.Location = new Point(222, 50);
             textBox28.Name = "textBox28";
             textBox28.Size = new Size(145, 20);
             textBox28.TabIndex = 20;
@@ -323,7 +321,7 @@
             // label38
             // 
             label38.AutoSize = true;
-            label38.Location = new Point(181, 16);
+            label38.Location = new Point(224, 34);
             label38.Name = "label38";
             label38.Size = new Size(85, 13);
             label38.TabIndex = 19;
@@ -333,7 +331,7 @@
             // textBox27
             // 
             textBox27.BackColor = Color.FromArgb(224, 224, 224);
-            textBox27.Location = new Point(21, 32);
+            textBox27.Location = new Point(64, 50);
             textBox27.Name = "textBox27";
             textBox27.Size = new Size(145, 20);
             textBox27.TabIndex = 18;
@@ -342,7 +340,7 @@
             // label14
             // 
             label14.AutoSize = true;
-            label14.Location = new Point(23, 16);
+            label14.Location = new Point(66, 34);
             label14.Name = "label14";
             label14.Size = new Size(97, 13);
             label14.TabIndex = 17;
@@ -352,7 +350,7 @@
             // textBox1
             // 
             textBox1.BackColor = Color.FromArgb(224, 224, 224);
-            textBox1.Location = new Point(21, 70);
+            textBox1.Location = new Point(64, 88);
             textBox1.Name = "textBox1";
             textBox1.Size = new Size(297, 20);
             textBox1.TabIndex = 2;
@@ -404,7 +402,7 @@
             // label6
             // 
             label6.AutoSize = true;
-            label6.Location = new Point(633, 55);
+            label6.Location = new Point(676, 73);
             label6.Name = "label6";
             label6.Size = new Size(0, 13);
             label6.TabIndex = 7;
@@ -412,7 +410,7 @@
             // label1
             // 
             label1.AutoSize = true;
-            label1.Location = new Point(19, 55);
+            label1.Location = new Point(62, 73);
             label1.Name = "label1";
             label1.Size = new Size(108, 13);
             label1.TabIndex = 0;
@@ -424,9 +422,11 @@
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             BackgroundImage = Properties.Resources.tela_inicio___fundo;
-            ClientSize = new Size(1280, 665);
+            ClientSize = new Size(1370, 749);
             Controls.Add(groupBox6);
             Controls.Add(listBox1);
+            Controls.Add(button1);
+            Controls.Add(button3);
             Controls.Add(groupBox1);
             Name = "atendimentosAgendados";
             Text = "atendimentosAgendados";

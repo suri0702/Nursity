@@ -43,7 +43,7 @@
             boasvindasLabel.FlatStyle = FlatStyle.Flat;
             boasvindasLabel.Font = new Font("Tahoma", 12F, FontStyle.Bold, GraphicsUnit.Point);
             boasvindasLabel.ForeColor = Color.FromArgb(248, 237, 239);
-            boasvindasLabel.Location = new Point(594, 264);
+            boasvindasLabel.Location = new Point(593, 302);
             boasvindasLabel.Name = "boasvindasLabel";
             boasvindasLabel.Size = new Size(184, 19);
             boasvindasLabel.TabIndex = 0;
@@ -57,7 +57,7 @@
             textBox1.BackColor = Color.FromArgb(248, 237, 239);
             textBox1.Font = new Font("Tahoma", 8.5F, FontStyle.Regular, GraphicsUnit.Point);
             textBox1.ForeColor = SystemColors.ButtonShadow;
-            textBox1.Location = new Point(563, 308);
+            textBox1.Location = new Point(562, 339);
             textBox1.Margin = new Padding(5, 25, 5, 10);
             textBox1.Name = "textBox1";
             textBox1.Size = new Size(246, 21);
@@ -71,7 +71,7 @@
             textBox2.BackColor = Color.FromArgb(248, 237, 239);
             textBox2.Font = new Font("Tahoma", 8.25F, FontStyle.Regular, GraphicsUnit.Point);
             textBox2.ForeColor = SystemColors.ButtonShadow;
-            textBox2.Location = new Point(563, 339);
+            textBox2.Location = new Point(562, 378);
             textBox2.Margin = new Padding(3, 3, 3, 10);
             textBox2.Name = "textBox2";
             textBox2.PasswordChar = '*';
@@ -86,7 +86,7 @@
             button1.Cursor = Cursors.Hand;
             button1.Font = new Font("Tahoma", 9F, FontStyle.Bold, GraphicsUnit.Point);
             button1.ForeColor = SystemColors.ControlDarkDark;
-            button1.Location = new Point(641, 380);
+            button1.Location = new Point(640, 417);
             button1.Margin = new Padding(3, 10, 3, 3);
             button1.Name = "button1";
             button1.Size = new Size(86, 29);

@@ -54,7 +54,7 @@ namespace Nursityy
 
         private void printDocument1_PrintPage_1(object sender, PrintPageEventArgs e)
         {
-            
+
         }
     }
 }

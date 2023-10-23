@@ -228,5 +228,23 @@ namespace Nursityy
             atualizaLista();
 
         }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            Hide();
+            Preescricao preescricao = new Preescricao();
+            preescricao.ShowDialog();
+            atualizaLista();
+            Show();
+        }
+
+        private void button2_Click_1(object sender, EventArgs e)
+        {
+            Hide();
+            Preescricao preescricao = new Preescricao();
+            preescricao.ShowDialog();
+            atualizaLista();
+            Show();
+        }
     }
 }
